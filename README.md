@@ -1,6 +1,6 @@
-# Gophercon Iceland
+# Women Who Go London
 
-## Learn about and explore machine learning in Go
+## Using Machine Learning with Go
 
 We will show you how to take advantage of Machine Learning capabilities to power up your own apps.
 Learn about the kinds of problems Machine Learning is good at, and what it cannot do.
@@ -8,7 +8,13 @@ We will explore the core concepts around this mysterious technology, and build a
 
 ## Slides
 
-https://docs.google.com/presentation/d/10pzku6UfEblhlLIQvOHVA7Rhk4w55ieH67vKKuyEaYc/edit?usp=sharing
+https://docs.google.com/presentation/d/1Hke2c67_q8KHQqByjX3Wdt6I8sTIl1GhpGcpVo9ZtRI/edit?usp=sharing
+
+
+## Give Feedback
+
+https://goo.gl/forms/F21XQDR3jxZofIKA3
+
 
 # Requirements
 
