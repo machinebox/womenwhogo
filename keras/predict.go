@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/machinebox/gopherconeu/dataset"
 
@@ -21,13 +22,20 @@ const (
 
 // bodyToVector translates a text body into a vector.
 func bodyToVector(body string, wordIndex map[string]int32, dim int) []int32 {
-
-	// split the words on spaces
-	// output vector of the len(vector) = dim
-
-	// dummy vector REPLACE ME with code
-	vector := make([]int32, dim, dim)
-
+	words := strings.Fields(body)
+	vector := make([]int32, dim)
+	//vector := [1000]int32{}
+	if len(words) > dim {
+		words = words[:dim]
+	}
+	offset := dim - len(words)
+	for pos, w := range words {
+		idx, ok := wordIndex[strings.ToLower(w)]
+		if !ok {
+			continue
+		}
+		vector[pos+offset] = int32(idx)
+	}
 	return vector
 }
 
