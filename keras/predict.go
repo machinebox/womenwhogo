@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/machinebox/gopherconeu/dataset"
+	"github.com/machinebox/womenwhogo/dataset"
 
 	tf "github.com/tensorflow/tensorflow/tensorflow/go"
 )
@@ -88,7 +88,20 @@ func invertIndex(index map[string]int32) ([]string, error) {
 
 // function to transform a vector of labels to a label probabilities
 func vectorToLabel(y []float32, labels []string) (string, error) {
-	return "not implemented", nil
+	// get the max, activation, and map to the index
+	max := float32(0.0)
+	idx := 0
+	for i := range y {
+		if y[i] > max {
+			max = y[i]
+			idx = i
+		}
+	}
+	if idx > len(labels) {
+		return "", errors.New("the index for the label is out of bounds")
+	}
+	return labels[idx], nil
+
 }
 
 func main() {
